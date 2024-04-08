@@ -29,7 +29,7 @@ public class affichage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		laGestion gestionEM = new laGestion();
 		request.setAttribute("listeEmployes",gestionEM.listeEmployes);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/afficher.jsp").forward(request, response);
 	}
 
 
@@ -37,7 +37,7 @@ public class affichage extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/afficher.jsp").forward(request, response);
 	}
 
 }

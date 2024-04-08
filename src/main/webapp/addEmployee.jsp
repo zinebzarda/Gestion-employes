@@ -8,8 +8,9 @@
 <link rel="stylesheet" type="text/css" href="Style.css">
 </head>
 <body>
+ <%@ include file="nav.jsp" %>
      <h2>Ajouter un nouvel employe</h2>
-    <form method="post" action="addEmployee">
+    <form method="post" action="addEmployee" class="formulle">
         <label for="nom">*Nom:</label>
         <input type="text" id="nom" name="nom" required><br>
         <label for="email">*E-mail:</label>

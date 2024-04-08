@@ -11,7 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class addEmployes extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     public addEmployes() {
-    	
+    	   super();
+           // TODO Auto-generated constructor stub
       
     }
 
