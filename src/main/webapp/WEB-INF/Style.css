@@ -12,10 +12,12 @@ h2 {
 }
 
 form {
-    background-color: #fff;
+   background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 50%;
+    margin: 0 auto; 
 }
 
 label {
@@ -47,4 +49,3 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #00ff00; 
 }
-

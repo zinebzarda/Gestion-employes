@@ -7,40 +7,41 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/addEmployes")
-public class addEmployes extends HttpServlet {
+import com.employes.servlet.laGestion;
+
+/**
+ * Servlet implementation class deleteEmploye
+ */
+@WebServlet("/deleteEmploye")
+public class deleteEmploye extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public addEmployes() {
-    	
-      
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public deleteEmploye() {
+        super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		this.getServletContext().getRequestDispatcher("/WEB-INF/addEmployee.jsp").forward(request, response);
-	}
+		this.getServletContext().getRequestDispatcher("/WEB-INF/afficher.jsp").forward(request, response);
+		}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
 		String nom = request.getParameter("nom");
-		String email = request.getParameter("email");
-		int telephone = Integer.parseInt(request.getParameter("telephone"));
-		String departement = request.getParameter("departement");
-		String poste = request.getParameter("poste");
-		
 		laGestion gestionEM = new laGestion();
-		boolean add = gestionEM.addEmployes(nom, email, telephone, departement, poste);
+        boolean delete = gestionEM.deleteEmploye(nom);
 		
-		request.setAttribute("Resultat", add);
+		request.setAttribute("Resultat", delete);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/addEmployee.jsp").forward(request, response);
-	
+		this.getServletContext().getRequestDispatcher("/WEB-INF/afficher.jsp").forward(request, response);
 	}
 
 }
